@@ -4,9 +4,11 @@
 <body>
 
 <div ng-app="" ng-init="nameDefault='Tom Klingbeil'">
- 	<p>Name: <input type="text" ng-model="name"></p>
+ 	<p>Name: <input type="text" ng-model="name" value="nameDefault"></p>
   <p>Default Name: <span  ng-bind="nameDefault"></span></p>
- 	<p ng-bind="name"></p>
+  <p ng-bind="name"></p>
+  <p>Some calculations: {{ 5 + 5 }}</p>
+  <p>Binding part 2: {{ name }}</p>
 </div>
 
 </body>
