@@ -4,6 +4,12 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="controller/my.controller.js"></script>
     <!--<script src="directive/my.directive.js"></script>-->
+    <style>
+        input.ng-invalid {
+            background-color: red;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -12,7 +18,7 @@
         <form name="userForm">
             <p>FistName: <input type="text" ng-model="ctrl.firstName" /></p>
             <p>LastName: <input type="text" ng-model="ctrl.lastName" /></p>
-            <p>Email: <input type="email" ng-model="email" name="email"><span ng-show="userForm.email.$error.email">Not a valid e-mail address</span></p>
+            <p>Email: <input type="email" ng-model="email" name="email" required><span ng-show="userForm.email.$error.email">Not a valid e-mail address</span></p>
             <h2>Status</h2>
             <ul>
                 <li>Valid: {{userForm.email.$valid}}</li>
