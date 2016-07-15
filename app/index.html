@@ -3,6 +3,7 @@
 
 <head>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="services/user.service.js"></script>
     <script src="controller/my.controller.js"></script>
     <script src="controller/user.controller.js"></script>
     <!--<script src="directive/my.directive.js"></script>-->
@@ -45,7 +46,9 @@
             <p>Some other Name:
                 <h1 ng-click="uCtrl.changeName()">{{uCtrl.otherName | uppercase}}</h1>
             </p>
+            <p>URL: {{uCtrl.url}}</p>
             <p>FilterBy: <input type="text" ng-model="filterBy" /></p>
+
             <ul>
                 <li ng-repeat="user in uCtrl.users | filter: { lastName: filterBy } | orderBy: 'lastName'">{{user.lastName | uppercase}}, {{user.firstName | uppercase}} {{user.salary | currency }}</li>
             </ul>
