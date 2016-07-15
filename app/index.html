@@ -9,7 +9,8 @@
     <style>
         input.ng-invalid {
             background-color: red;
-        }    
+        }
+        
         input.ng-untouched {
             background-color: white;
         }
@@ -42,8 +43,11 @@
         </div>
         <div ng-controller="userController as uCtrl">
             <p>Some other Name:
-                <h1 ng-click="uCtrl.changeName()">{{uCtrl.otherName}}</h1>
+                <h1 ng-click="uCtrl.changeName()">{{uCtrl.otherName | uppercase}}</h1>
             </p>
+            <ul>
+                <li ng-repeat="user in uCtrl.users | orderBy: 'lastName'">{{user.lastName | uppercase}}, {{user.firstName | uppercase}}</li>
+            </ul>
         </div>
     </div>
 
